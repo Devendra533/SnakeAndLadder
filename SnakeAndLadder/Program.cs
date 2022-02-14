@@ -3,5 +3,6 @@ using SnakeAndLadder;
 Console.WriteLine(" ......Welcome To Snake And Ladder Game .......");
 SnakeAndLadderGame play = new SnakeAndLadderGame();
 play.PlayGame();
+play.TillPosition100();
 
 Console.ReadKey();

@@ -20,29 +20,42 @@ namespace SnakeAndLadder
             Console.WriteLine( "your position Is At :" + position);
             int check1 = number.Next(1, 7);
             int check2 = number.Next(1, 4);
-            switch (check2) 
+            switch (check2)
             {
-               case 1:
+                case 1:
                     Console.WriteLine("Your Position Is Same");
                     Console.WriteLine("Your Position IS :" + position);
                     break;
                 case 2:
                     position += check1;
                     Console.WriteLine("Congrats It's A Ladder");
-                    Console.WriteLine("Your Position Is :" + position);
-
+                     Console.WriteLine("Your Position Is :" + position);
                     break;
                 case 3:
+                    position -= check1;
                     Console.WriteLine("Sorry It's A Snake");
-                    Console.WriteLine("You Return TO :" + position);
+                    if (position < 0) 
+                    { 
+                        position = 0;
+                       Console.WriteLine("You Return TO :" + position);
+                    }
+                    else
+                        Console.WriteLine("You Return TO :" + position);
                     break;
             }
-
-
-
+           
+        }
+        public void TillPosition100() 
+        {
+            while (position <= 100)
+             PlayGame();
+            Console.WriteLine(" YOU WIN ");
 
 
         }
+
+
+
 
        
     }
