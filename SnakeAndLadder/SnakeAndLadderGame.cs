@@ -29,7 +29,13 @@ namespace SnakeAndLadder
                 case 2:
                     position += check1;
                     Console.WriteLine("Congrats It's A Ladder");
-                     Console.WriteLine("Your Position Is :" + position);
+                    if (position >= 100)
+                    {
+                        Console.WriteLine("Your Position Is :" + position);
+                    }
+                    else
+                        position += check1;
+                        Console.WriteLine("Your Position Is :" + position);
                     break;
                 case 3:
                     position -= check1;
@@ -47,7 +53,7 @@ namespace SnakeAndLadder
         }
         public void TillPosition100() 
         {
-            while (position <= 100)
+            while (position < 100)
              PlayGame();
             Console.WriteLine(" YOU WIN ");
 
