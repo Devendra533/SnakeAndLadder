@@ -11,7 +11,8 @@ namespace SnakeAndLadder
         public const int NO_PLAY = 1;
         public const int LADDER = 2;
         public const int SNAKE = 3;
-
+       
+        public int TOTAL_DICE_ROLL = 0;
         public int position = 0;
         Random number = new Random();
         public void PlayGame() 
@@ -19,6 +20,7 @@ namespace SnakeAndLadder
            
             Console.WriteLine( "your position Is At :" + position);
             int check1 = number.Next(1, 7);
+            TOTAL_DICE_ROLL++;
             int check2 = number.Next(1, 4);
             switch (check2)
             {
@@ -27,9 +29,8 @@ namespace SnakeAndLadder
                     Console.WriteLine("Your Position IS :" + position);
                     break;
                 case 2:
-                    position += check1;
                     Console.WriteLine("Congrats It's A Ladder");
-                    if (position >= 100)
+                    if (position > 100)
                     {
                         Console.WriteLine("Your Position Is :" + position);
                     }
@@ -49,20 +50,17 @@ namespace SnakeAndLadder
                         Console.WriteLine("You Return TO :" + position);
                     break;
             }
+          
            
+
         }
         public void TillPosition100() 
         {
             while (position < 100)
              PlayGame();
             Console.WriteLine(" YOU WIN ");
-
-
+            Console.WriteLine("Total Dice Roll : " + TOTAL_DICE_ROLL);
         }
 
-
-
-
-       
     }
 }
