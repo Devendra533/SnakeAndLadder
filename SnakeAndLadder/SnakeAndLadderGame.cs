@@ -32,10 +32,11 @@ namespace SnakeAndLadder
                     Console.WriteLine("Congrats It's A Ladder");
                     if (position > 100)
                     {
+                        position -= check1;
                         Console.WriteLine("Your Position Is :" + position);
                     }
                     else
-                        position += check1;
+                      
                         Console.WriteLine("Your Position Is :" + position);
                     break;
                 case 3:
